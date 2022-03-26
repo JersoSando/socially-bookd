@@ -11,6 +11,6 @@ app.use(express.json())
 app.use(cors())
 
 // Endpoints
-
+app.post('/api/signup', ctrl.signUp)
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`))
