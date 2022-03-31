@@ -6,6 +6,7 @@ export default function NavHeader() {
     <div>
         <Link to="/login">Log in </Link>
         <Link to="/" > Home </Link>
+        <Link to='/dashboard'> Dashboard </Link>
     </div>
   )
 }

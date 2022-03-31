@@ -1,26 +1,30 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Header from './Header'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const navi = useNavigate()
+  
 
-  const loginUser = () => {
-    axios.get('/api/user').then((res) => {
-      setEmail(res.data.email)
-      setPassword(res.data.password)
-    }).catch(err => console.log(err))
+  const loginUser = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:4000/api/user', {
+      email: e.target[0].value,
+      password: e.target[1].value
+    })
+    .then(() => navi('/dashboard', {replace: true}))
+    .catch(err => console.log(err.message))
   }
   return (
     <div>
         <Header />
-        <form>
+        <form onSubmit={loginUser}>
             <label htmlFor='Email'>Email: </label>
             <input name='Email' placeholder='Email' type='text'/>
             <label htmlFor='Password'>Password: </label>
             <input name='Password' placeholder='Password' type='password'/>
-            <button onClick={loginUser}>Log Me In</button>
+            <button>Log Me In</button>
         </form>
     </div>
   )

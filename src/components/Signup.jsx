@@ -1,17 +1,27 @@
 import React from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { validateLogin } from '../utilities/helpers';
 
 export default function Signup() {
+  const navi = useNavigate()
+
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    axios.post('http://localhost:4000/api/signup', {
+    const signUpObj = {
       firstName: e.target[0].value,
       lastName: e.target[1].value,
       email: e.target[2].value,
       password: e.target[3].value,
-    })
-    .then(res => console.log(res)) 
+    }
+
+    const finalSignUpObj = validateLogin(signUpObj, e.target[4].value)
+    e.preventDefault()
+    if (!finalSignUpObj) {
+      return window.alert(`Passwords do not match`)
+    }
+    axios.post('http://localhost:4000/api/signup', finalSignUpObj)
+    .then(() => navi('/dashboard', {replace: true})) 
     .catch(error => console.log(error.message))
   }
 
