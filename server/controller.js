@@ -12,10 +12,10 @@ module.exports = {
     },
     logIn: async(req, res) => {
         const {email, password} = req.body
-        const data = await sequelize.query(`SELECT email, password FROM users WHERE email = '${email}' AND password = '${password}'`)
-        console.log('what is login data', data[0])
+        const data = await sequelize.query(`SELECT first_name, email, password FROM users WHERE email = '${email}' AND password = '${password}'`)
+        console.log('what is login data', data)
         if (data[0]) {
-            res.status(200).send(`Welcome!`)
+            res.status(200).send(`Hello, ${data[0][0].first_name}`)
         } else {
             res.status(400).send(`User not found`)
         }

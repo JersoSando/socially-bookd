@@ -1,10 +1,9 @@
 import React from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import Header from './Header'
 import { validateLogin } from '../utilities/helpers';
 
-export default function Signup() {
-  const navi = useNavigate()
+export default function Signup(props) {
 
 
   const handleSubmit = (e) => {
@@ -21,7 +20,10 @@ export default function Signup() {
       return window.alert(`Passwords do not match`)
     }
     axios.post('http://localhost:4000/api/signup', finalSignUpObj)
-    .then(() => navi('/dashboard', {replace: true})) 
+    .then((res) => {
+      props.setUser(res.data);
+      props.handleChangeLocation('DASHBOARD');
+    }) 
     .catch(error => console.log(error.message))
   }
 

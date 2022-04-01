@@ -4,7 +4,7 @@ import CreatePost from './CreatePost'
 import PostList from './PostList'
 import { baseURL } from '../utilities/constants'
 
-export default function PostContainer() {
+export default function PostContainer(props) {
   const [postList, setPostList] = useState([])
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const createPost = async (text) => {
         return window.alert(`Enter text`)
     }
     console.log('hit create', text)
-    const res = await axios.post('${baseURL}/posts', {text})
+    const res = await axios.post(`${baseURL}/posts`, {text})
     console.log('what be data', res.data)
     setPostList(res.data)
   

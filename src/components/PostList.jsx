@@ -7,7 +7,7 @@ export default function PostList(props) {
     //   holds the posts
     // axios.get 
     <div>
-      {props.postList.map((e) => <Post deletePost={props.deletePost} key={e.post_id} post={e}/>)}
+      {props.postList && props.postList.map((e) => <Post deletePost={props.deletePost} key={e.post_id} post={e}/>)}
     </div>
   )
 }

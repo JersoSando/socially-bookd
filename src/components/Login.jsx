@@ -1,19 +1,19 @@
 import React from 'react'
 import Header from './Header'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
-  const navi = useNavigate()
+export default function Login(props) {
   
-
   const loginUser = (e) => {
     e.preventDefault()
     axios.post('http://localhost:4000/api/user', {
       email: e.target[0].value,
       password: e.target[1].value
     })
-    .then(() => navi('/dashboard', {replace: true}))
+    .then((res) => {
+      props.setUser(res.data);
+      props.handleChangeLocation('DASHBOARD');
+    })
     .catch(err => console.log(err.message))
   }
   return (

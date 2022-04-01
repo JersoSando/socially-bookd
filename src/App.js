@@ -1,21 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Home from './components/Home';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
-import {Routes, Route, Link} from 'react-router-dom'
-import NavHeader from './components/NavHeader';
 
 function App() {
+  const [location, setLocation] = useState('HOME')
+  const [user, setUser] = useState({})
+  const handleChangeLocation = (nextLocation) => {
+    setLocation(nextLocation)
+  }
+  
+  let componentMap = {
+    'DASHBOARD': <Dashboard user={user} handleChangeLocation={handleChangeLocation} currentLocation={location} />,
+    'LOGIN': <Login handleChangeLocation={handleChangeLocation} currentLocation={location} setUser={setUser}/>,
+    'HOME': <Home handleChangeLocation={handleChangeLocation} currentLocation={location} setUser={setUser}>Hello</Home>,
+    
+
+  }
   return (
     <div>
-      <NavHeader />
-      <Link to="/login"></Link> 
-    <Routes>
-      <Route path="/" element={<Home />}/>
-      <Route path="/login" element={<Login />}/>
-      <Route path="/dashboard" element={<Dashboard />} />
-    </Routes>
+    {componentMap[location]}
   </div>
         
   );
