@@ -6,23 +6,21 @@ import BookCardList from './BookCardList'
 import ReviewContainer from './ReviewContainer'
 // import { SearchContext } from '../context/sociallyBookedContext'
 
-export default function Dashboard(props) {
+export default function Dashboard() {
   // const {bookList} = useContext(SearchContext)
   const [listType, setListType] = useState('POSTCONTAINER')
-  const handleDashboardList = (nextList) => {
-    setListType(nextList)
-  }
+ 
   let listContainerType = {
-    'POSTCONTAINER': <PostContainer handleDashboardList={handleDashboardList}/>, 
-    'BOOKCARDLIST': <BookCardList handleDashboardList={handleDashboardList}/>,
-    'REVIEWCONTAINER': <ReviewContainer handleDashboardList={handleDashboardList}/>
+    'POSTCONTAINER': <PostContainer handleDashboardList={setListType}/>, 
+    'BOOKCARDLIST': <BookCardList handleDashboardList={setListType}/>,
+    'REVIEWCONTAINER': <ReviewContainer handleDashboardList={setListType}/>
   }
 
   // grab what was typed and set the cardlist type array to what was returned from google
   // run logic and set listType to BOOKLISTTYPE
   return (
     <div>
-        <Header id="dashboard-header" handleDashboardList={setListType}  user={props.user} />
+        <Header id="dashboard-header" handleDashboardList={setListType} />
         {listContainerType[listType]}
     </div>
   )
