@@ -35,7 +35,7 @@ const submitReview = async () => {
         </div>
             <textarea className='description' rows='4' cols='50' value={reviewText}
             onChange={e => setReviewText(e.target.value)}></textarea>
-            <button onClick={submitReview}>Submit Review</button>
+            <button onClick={() => submitReview()}>Submit Review</button>
     </div>
   )
 }

@@ -15,9 +15,9 @@ export default function BookCardList({handleDashboardList}) {
   return (
     <div>
       {
-        bookList.length > 0 && bookList.map(book => {
+        bookList.length > 0 && bookList.map((book, index) => {
           let thumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail;
-          return thumbnail !== undefined && <Card showReviewModal={() => {setShowReview(true); setBookItem(book)}} onClick={() => {setShow(true);setBookItem(book)}} book={{...book, thumbnail}}/>
+          return thumbnail !== undefined && <Card key={index} showReviewModal={() => {setShowReview(true); setBookItem(book)}} onClick={() => {setShow(true);setBookItem(book)}} book={{...book, thumbnail}}/>
         })
       }
       <Modal closeModal={() => setShow(false)} show={show} book={bookItem}/>
