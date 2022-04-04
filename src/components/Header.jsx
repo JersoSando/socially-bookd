@@ -3,7 +3,7 @@ import { useSocialContext } from '../context/sociallyBookedContext'
 import Search from './Search'
 
 export default function Header(props) {
-  const {userMessage, handlePageChange, currentPage} = useSocialContext()
+  const {userInfoObj, handlePageChange, currentPage} = useSocialContext()
 
   const buttonText = currentPage === 'LOGIN' ? 'Sign Me Up' : 'Log Me In'
   const changePage = currentPage === 'LOGIN' ? 'HOME' : 'LOGIN'
@@ -11,7 +11,7 @@ export default function Header(props) {
 
   return (
     <div className='header'>
-        <header>Socially Book'd Hello, {userMessage.first_name}</header>
+        <header>Socially Book'd Hello, {userInfoObj.first_name}</header>
         <span className='search-box'>
           <Search handleDashboardList={props.handleDashboardList}/>
           <button onClick={() => handlePageChange(changePage)}>{buttonText}</button>

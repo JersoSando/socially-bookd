@@ -26,7 +26,7 @@ export default function Search(props) {
           value={search} 
           onChange={e => setSearch(e.target.value)}
           onKeyPress={searchBook}/>
-          <button>Search</button> 
+          {/* <button>Search</button>  */}
     </div>
   )
 }

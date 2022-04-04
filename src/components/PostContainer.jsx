@@ -7,16 +7,16 @@ import { useSocialContext } from '../context/sociallyBookedContext'
 
 export default function PostContainer() {
   const [postList, setPostList] = useState([])
-  const {userMessage} = useSocialContext()
+  const {userInfoObj} = useSocialContext()
   useEffect(() => {
-    axios.get(`${baseURL}/posts/${userMessage.id}`).then(res => setPostList(res.data))
+    axios.get(`${baseURL}/posts/${userInfoObj.id}`).then(res => setPostList(res.data))
   }, [])
 
 const createPost = async (text) => {
     if (!text) {
         return window.alert(`Enter text`)
     }
-    const res = await axios.post(`${baseURL}/posts`, {text, id: userMessage.id})
+    const res = await axios.post(`${baseURL}/posts`, {text, id: userInfoObj.id})
     setPostList(res.data)
   
 }

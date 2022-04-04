@@ -7,11 +7,12 @@ export const useSocialContext = () => useContext(appContext)
 const SociallyBookedContextProvider = ({children}) => {
     const [bookList, setBookList] = useState([]);
     const [currentPage, setLocation] = useState("HOME")
-    const [userMessage, setUserMessage] = useState('')
+    const [userInfoObj, setuserInfoObj] = useState('')
     const globalState = {
         bookList,
         currentPage,
-        userMessage
+        userInfoObj,
+        
     }
 
     const getBookList = (bookListArray) => setBookList(bookListArray)
@@ -20,7 +21,7 @@ const SociallyBookedContextProvider = ({children}) => {
     }
 
     const setUserLogin = (loginRes) => {
-        setUserMessage(loginRes)
+        setuserInfoObj(loginRes)
         setLocation("DASHBOARD")
     }
 
@@ -30,7 +31,7 @@ const SociallyBookedContextProvider = ({children}) => {
             ...globalState,
             getBookList,
             handlePageChange,
-            setUserLogin
+            setUserLogin,
         }}>
             {children}
         </appContext.Provider>

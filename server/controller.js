@@ -39,17 +39,18 @@ module.exports = {
         await sequelize.query(`DELETE FROM posts WHERE post_id = ${id.toString()} RETURNING posts `)
         const updatedList = await sequelize.query(`SELECT * FROM posts`)
         res.status(200).send(updatedList[0])
+    },
+    createReview: async(req,res) => {
+        const {reviewTitle, reviewAuthor, review, user_id} = req.body
+        console.log('what is the body', req.body)
+        const data = await sequelize.query(`INSERT INTO review (review_title, review_author, review_text, user_id) VALUES ('${reviewTitle}', '${reviewAuthor}', '${review}', '${user_id}')`)
+        console.log('what is data', data)
+        const dataTwo = await sequelize.query(`SELECT * FROM reviews`)
+        return res.status(200).send(dataTwo[0])
+    },
+    getReview: async(req,res) => {
+        const {id} = req.params
+        const data = await sequelize.query(`SELECT * FROM review WHERE user_id=${id}`)
+        res.status(200).send(data[0])
     }
-    // createReview: async(req,res) => {
-    //     const {review, rating, user_id} = req.body
-    //     const data = await sequelize.query(`INSERT INTO reviews (review, rating) VALUES ('${review}' '${rating} '${user_id})`)
-    //     console.log('what is data', data)
-    //     const dataTwo = await sequelize.query(`SELECT * FROM reviews`)
-    //     return res.status(200).send(dataTwo[0])
-    // },
-    // getReview: async(req,res) => {
-    //     const {user_id} = req.params
-    //     const data = await sequelize.query(`SELECT * reviews WHERE id=${user_id}`)
-    //     res.status(200).send(data[0])
-    // }
 }

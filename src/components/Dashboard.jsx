@@ -3,6 +3,7 @@ import Header from './Header'
 import PostContainer from './PostContainer'
 import PostList from './PostList'
 import BookCardList from './BookCardList'
+import ReviewContainer from './ReviewContainer'
 // import { SearchContext } from '../context/sociallyBookedContext'
 
 export default function Dashboard(props) {
@@ -13,7 +14,8 @@ export default function Dashboard(props) {
   }
   let listContainerType = {
     'POSTCONTAINER': <PostContainer handleDashboardList={handleDashboardList}/>, 
-    'BOOKCARDLIST': <BookCardList handleDashboardList={handleDashboardList}/>
+    'BOOKCARDLIST': <BookCardList handleDashboardList={handleDashboardList}/>,
+    'REVIEWCONTAINER': <ReviewContainer handleDashboardList={handleDashboardList}/>
   }
 
   // grab what was typed and set the cardlist type array to what was returned from google
