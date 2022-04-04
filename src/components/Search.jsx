@@ -2,17 +2,21 @@ import axios from 'axios'
 import React, {useState, useContext} from 'react'
 import Card from './Card'
 import { SearchContext } from '../context/SearchContext'
+import { useSocialContext } from '../context/sociallyBookedContext'
 
 const apiKey = process.env.REACT_APP_API_KEY
 // console.log('What is api key', apiKey)
-export default function Search() {
-    const {getBookList} = useContext(SearchContext)
+export default function Search(props) {
+    const {getBookList} = useSocialContext()
     const [search, setSearch] = useState('')
-    const [bookData, setBookData] = useState([])
-    const searchBook = (event) => {
+    const searchBook = async (event) => {
       if (event.key ==="Enter") {
-        axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key='+apiKey + '&maxResults=40')
-        .then(res => getBookList(res.data.items))
+        await axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key='+apiKey + '&maxResults=20')
+        .then(res => { 
+         getBookList(res.data.items)
+         console.log('what is props', props)
+         props.handleDashboardList('BOOKCARDLIST')
+        })
         .catch(err => console.log(err))
       }
     }
@@ -23,9 +27,6 @@ export default function Search() {
           onChange={e => setSearch(e.target.value)}
           onKeyPress={searchBook}/>
           <button>Search</button> 
-          <div>
-              <Card book={bookData}/>
-          </div>
     </div>
   )
 }

@@ -2,14 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import {BrowserRouter} from 'react-router-dom'
-import { SearchProvider} from './context/SearchContext'
+import  SociallyBookedContextProvider from './context/sociallyBookedContext'
 
 ReactDOM.render(
   <React.StrictMode>
-      <SearchProvider>
+      <SociallyBookedContextProvider>
         <App />
-      </SearchProvider>
+      </SociallyBookedContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

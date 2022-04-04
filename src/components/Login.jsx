@@ -1,18 +1,20 @@
 import React from 'react'
 import Header from './Header'
 import axios from 'axios';
+import { useSocialContext } from '../context/sociallyBookedContext'
 
-export default function Login(props) {
+export default function Login() {
+  const { setUserLogin } = useSocialContext()
   
-  const loginUser = (e) => {
+  const loginUser = async (e) => {
     e.preventDefault()
-    axios.post('http://localhost:4000/api/user', {
+    if(!e.target[0].value && !e.target[1].value) return null
+    await axios.post('http://localhost:4000/api/user', {
       email: e.target[0].value,
       password: e.target[1].value
     })
     .then((res) => {
-      props.setUser(res.data);
-      props.handleChangeLocation('DASHBOARD');
+      setUserLogin(res.data);
     })
     .catch(err => console.log(err.message))
   }

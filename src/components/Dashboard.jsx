@@ -3,10 +3,10 @@ import Header from './Header'
 import PostContainer from './PostContainer'
 import PostList from './PostList'
 import BookCardList from './BookCardList'
-import { SearchContext } from '../context/SearchContext'
+// import { SearchContext } from '../context/sociallyBookedContext'
 
 export default function Dashboard(props) {
-  const {bookList} = useContext(SearchContext)
+  // const {bookList} = useContext(SearchContext)
   const [listType, setListType] = useState('POSTCONTAINER')
   const handleDashboardList = (nextList) => {
     setListType(nextList)
@@ -20,7 +20,7 @@ export default function Dashboard(props) {
   // run logic and set listType to BOOKLISTTYPE
   return (
     <div>
-        <Header  user={props.user} />
+        <Header id="dashboard-header" handleDashboardList={setListType}  user={props.user} />
         {listContainerType[listType]}
     </div>
   )

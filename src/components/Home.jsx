@@ -5,7 +5,7 @@ import Signup from './Signup'
 export default function Home(props) {
   return (
     <div>
-        <Header />
+        <Header id="home-header" />
         <img src='https://img.freepik.com/free-vector/group-people-reading-books-multicultural-people-study-together_547662-562.jpg'/>
         <Signup handleChangeLocation={props.handleChangeLocation} setUser={props.setUser}/>
     </div>

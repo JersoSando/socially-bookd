@@ -2,8 +2,10 @@ import React from 'react'
 import axios from 'axios';
 import Header from './Header'
 import { validateLogin } from '../utilities/helpers';
+import { useSocialContext } from '../context/sociallyBookedContext'
 
-export default function Signup(props) {
+export default function Signup() {
+  const { setUserLogin } = useSocialContext()
 
 
   const handleSubmit = (e) => {
@@ -21,8 +23,7 @@ export default function Signup(props) {
     }
     axios.post('http://localhost:4000/api/signup', finalSignUpObj)
     .then((res) => {
-      props.setUser(res.data);
-      props.handleChangeLocation('DASHBOARD');
+      setUserLogin(res.data);
     }) 
     .catch(error => console.log(error.message))
   }
