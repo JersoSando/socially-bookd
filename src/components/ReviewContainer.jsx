@@ -7,9 +7,8 @@ export default function ReviewContainer() {
     const {userInfoObj} = useSocialContext()
     const [reviewList, setReviewList] = useState([])
     useEffect(() => {
-        axios.get(`${baseURL}/review/${userInfoObj.id}`).then(res => {console.log('what is res.data', res.data);setReviewList(res.data)})
+        axios.get(`${baseURL}/review/${userInfoObj.id}`).then(res => setReviewList(res.data))
     }, [])
-    console.log('what is reviewList', reviewList)
 
   return (
     <div className=''>
@@ -22,8 +21,7 @@ export default function ReviewContainer() {
                     <h4>{review.review_text}</h4>
                 </div>
                 )
-            })
-            
+            })      
         }
     </div>
   )

@@ -28,10 +28,18 @@
   box-shadow: 0 10px 10px #326273;
 }
 
+.greeting{
+  margin-left:60%;
+}
+
 .header-name{
   padding-top: 3.5%;
   padding-left: 2%;
   font-size: 36px;
+}
+
+.header-name:hover{
+  cursor: pointer;
 }
 
 .search-box{
@@ -74,8 +82,14 @@
 .signup-btn:hover{
   background-color: #326273;
   color: white;
+  cursor: pointer;
 }
 
+.btn-func:hover{
+  background-color: #326273;
+  color: white;
+  cursor: pointer;
+}
 /* login page */
 .login-container{
   height: 50vh;
@@ -84,7 +98,9 @@
   margin-right:10%;
   padding-right: 10%;
   display:flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 60vh;
   /* border-style: double; */
   /* border-top: solid;
@@ -109,10 +125,12 @@
 
 .login-container img{
   position:absolute;
-  margin-left: 10%;
+  /* margin-left: 10%; */
+  top: -118px;
+  left: 188px;
 
   /* top: 0; */
-  margin-bottom:100%;
+  /* margin-bottom:100%; */
   height: auto;
   width: 70%;
   /* object-fit: cover; */
@@ -198,6 +216,9 @@
   flex-direction: column;
   /* height: 60px; */
   /* font-size: 14px; */
+  position: absolute;
+  bottom: 2%;
+  left: 20%;
 }
 
 .card .title{

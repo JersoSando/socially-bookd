@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, {useState, useEffect, useContext } from 'react'
+import React, {useState, useEffect} from 'react'
 import CreatePost from './CreatePost'
 import PostList from './PostList'
 import { baseURL } from '../utilities/constants'

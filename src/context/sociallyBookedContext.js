@@ -35,6 +35,12 @@ const SociallyBookedContextProvider = ({children}) => {
         window.localStorage.removeItem('userInfoObj')
     }
 
+    // const handleLocationChange = () => {
+    //     // if(!isLoggedIn) return null
+    //     console.log('am i being clicked')
+    //     setLocation('DASHBOARD')
+    // }
+
     // global state object -----------------------------------------------
     const globalState = {
         bookList,
@@ -68,7 +74,8 @@ const SociallyBookedContextProvider = ({children}) => {
             getBookList,
             handlePageChange,
             setUserLogin,
-            logout
+            logout,
+        //    handleLocationChange
         }}>
             {children}
         </appContext.Provider>

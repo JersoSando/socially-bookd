@@ -24,13 +24,18 @@ export default function Header(props) {
     }
   }
 
+  // const {handleLocationChange} = useSocialContext()
+
+  
+
   return (
     <div className='header'>
-        <header className='header-name'>Socially Book'd Hello, {userInfoObj.first_name}</header>
+        <header onClick={() => props.handleDashboardList('POSTCONTAINER')} className='header-name'>Socially Book'd</header>
+        <div className='greeting'>Hello {userInfoObj.first_name}</div>
         <span className='search-box'>
           <Search handleDashboardList={props.handleDashboardList}/>
         <span>
-          <button onClick={() => headerButtonAndTextMap[currentPage].buttonFunc()}>{headerButtonAndTextMap[currentPage].buttonText}</button>
+          <button className='btn-func' onClick={() => headerButtonAndTextMap[currentPage].buttonFunc()}>{headerButtonAndTextMap[currentPage].buttonText}</button>
         </span>
         </span>
     </div>
