@@ -18,7 +18,6 @@
   flex-direction: row;
   margin-top: 5%;
   padding: 10%;
-  /* background-color: blue; */
 }
 .header{
   background-color:#5c9ead ;
@@ -50,7 +49,6 @@
 .search-input{
   outline: 0;
   border: 0;
-  /* width: 400px; */
   height: 35px;
   font-size: large;
 }
@@ -61,11 +59,9 @@
 
 .column-right {
   padding-left: auto;
-  /* background-color: white; */
 }
 
 .submit-form{
-  /* padding-top: 10%; */
   padding: 10% 20%;
   margin: 8px 0;
   border: bold;
@@ -102,39 +98,26 @@
   justify-content: center;
   align-items: center;
   height: 60vh;
-  /* border-style: double; */
-  /* border-top: solid;
-  border-width: 0.1px; */
-  /* background-color: #eeeeee; */
   box-shadow: 0 5px 5px #326273;
   position: relative;
 }
 
 .login-box{
-  /* background-color: #eeeeee; */
-  /* margin: auto; */
   margin-left: 10%;
   margin-top: 12%;
   height: 50%;
   width: 15%;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
   position:absolute;
 }
 
 .login-container img{
   position:absolute;
-  /* margin-left: 10%; */
   top: -118px;
   left: 188px;
-
-  /* top: 0; */
-  /* margin-bottom:100%; */
   height: auto;
   width: 70%;
-  /* object-fit: cover; */
-  /* background-image: none; */
 }
 
 .login-btn:hover{
@@ -144,28 +127,22 @@
 
 /* post container */
 .post-container{
-  /* background-color: pink; */
   height: 65vh;
   margin-top: 2%;
 }
 
 .create-post-container{
-  /* background-color: blue; */
   display: flex;
   justify-content: center;
   height: 5%;
-  /* border: 10px solid #326273; */
 }
 
 .post-list-container{
-  /* background-color: #eeeeee; */
   margin-top: 5%;
   height: 20%;
   display: flex;
   flex-direction: column;  
-  /* padding-left: 45%; */
   justify-content: space-evenly;
-  /* border: 10px solid white; */
 }
 
 .post-btn{
@@ -175,7 +152,6 @@
 /* book container */
 .book-container{
   height: 65vh;
-  /* background-color: #ffc0cb; */
   margin-top: 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
@@ -201,7 +177,6 @@
 .card:hover{
   transform: scale(0.9);
   background-color: #5c9ead;
-  /* color:black; */
   cursor: pointer;
 }
 
@@ -214,8 +189,6 @@
 .card .bottom{
   display: flex;
   flex-direction: column;
-  /* height: 60px; */
-  /* font-size: 14px; */
   position: absolute;
   bottom: 2%;
   left: 20%;
@@ -227,11 +200,6 @@
 }
 
 .card .author{
-  /* position: absolute;
-  bottom: 10px;
-  left: 10px;
-  right: 10px; */
-  /* background-color: aliceblue; */
   font-size: 20px;
   font-weight: bold;
   padding: 0.2rem;
@@ -240,7 +208,6 @@
 .card .bottom{
   display: flex;
   justify-content: baseline;
-  /* font-size: 14px; */
 }
 
 .review {
@@ -328,8 +295,6 @@
 .review-description{
   margin-top: 2rem;
   text-align: justify;
-  /* display: flex;
-  justify-content: center; */
   margin-left: 15%;
 }
 
@@ -339,7 +304,6 @@
 }
 
 .review-box{
-  /* background-color: blue; */
   border-style: double;
   margin-bottom: 10px;
 }

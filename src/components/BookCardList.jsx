@@ -10,7 +10,6 @@ export default function BookCardList({handleDashboardList}) {
   const [show, setShow] = useState(false)
   const [bookItem, setBookItem] = useState({})
   const [showReview, setShowReview] = useState(false)
-  console.log('what is bookItem', bookItem)
   
   return (
     <div className='book-container'>

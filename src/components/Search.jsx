@@ -1,11 +1,8 @@
 import axios from 'axios'
-import React, {useState, useContext} from 'react'
-import Card from './Card'
-import { SearchContext } from '../context/SearchContext'
+import React, {useState} from 'react'
 import { useSocialContext } from '../context/sociallyBookedContext'
 
 const apiKey = process.env.REACT_APP_API_KEY
-// console.log('What is api key', apiKey)
 export default function Search(props) {
     const {getBookList} = useSocialContext()
     const [search, setSearch] = useState('')
@@ -14,7 +11,6 @@ export default function Search(props) {
         await axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key='+apiKey + '&maxResults=20')
         .then(res => { 
          getBookList(res.data.items)
-         console.log('what is props', props)
          props.handleDashboardList('BOOKCARDLIST')
         })
         .catch(err => console.log(err))

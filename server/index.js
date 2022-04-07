@@ -6,7 +6,6 @@ require('dotenv').config()
 const PORT = process.env.PORT || 4000
 console.log('this is port', PORT)
 const ctrl = require('./controller')
-const { getPost } = require('./controller')
 
 // Middleware
 app.use(express.json())

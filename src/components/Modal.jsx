@@ -5,8 +5,6 @@ export default function Modal({show, book, closeModal}) {
     if(!show) {
         return null
     }
-    console.log('what is book', book)
-    // there should be a button with the x icon to close out of the modal
     let thumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail;
 
 

@@ -26,7 +26,7 @@ const submitReview = async () => {
         <div className='overlay-inner'>
             <button onClick={closeReviewModal} className='close'>Close</button>
         <div className='inner-box'>
-                <img src={thumbnail} alt='' />
+                <img src={thumbnail} alt='book picture' />
                 <div className='info'>
                     <h1>{book.volumeInfo.title}</h1>
                     <h3>{book.volumeInfo.authors}</h3>

@@ -35,12 +35,6 @@ const SociallyBookedContextProvider = ({children}) => {
         window.localStorage.removeItem('userInfoObj')
     }
 
-    // const handleLocationChange = () => {
-    //     // if(!isLoggedIn) return null
-    //     console.log('am i being clicked')
-    //     setLocation('DASHBOARD')
-    // }
-
     // global state object -----------------------------------------------
     const globalState = {
         bookList,
@@ -55,16 +49,11 @@ const SociallyBookedContextProvider = ({children}) => {
         const data = window.localStorage.getItem('userInfoObj')
         const storedLoginBool = window.localStorage.getItem('isLoggedIn')
         if(storedLoginBool && data){
-            // const userData = window.localStorage.getItem('userInfoObj')
-            console.log('I am logged in', data)
             setuserInfoObj(JSON.parse(data))
             setIsLoggedIn(JSON.parse(storedLoginBool))
             setLocation('DASHBOARD')
         }
     }, [])
-
-    console.log('what is user info object', isLoggedIn)
-
     
 
     return (
@@ -74,8 +63,7 @@ const SociallyBookedContextProvider = ({children}) => {
             getBookList,
             handlePageChange,
             setUserLogin,
-            logout,
-        //    handleLocationChange
+            logout
         }}>
             {children}
         </appContext.Provider>

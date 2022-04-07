@@ -22,7 +22,6 @@ const createPost = async (text) => {
 }
 
 const deletePost = async (id) => {
-    console.log('what is id', typeof id)
     const res = await axios.delete(`${baseURL}/posts/${id}`)
     setPostList(res.data)
   }

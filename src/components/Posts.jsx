@@ -1,11 +1,7 @@
-import axios from 'axios'
-import React, {useState, useEffect} from 'react'
-import CreatePost from './CreatePost'
-import PostList from './PostList'
+import React from 'react'
 import { useSocialContext } from '../context/sociallyBookedContext'
 
 export default function Post(props) {
-  const {userInfoObj} = useSocialContext
   return (
     <div className='review-box'>
         <h3>{props.post.post_text}</h3>

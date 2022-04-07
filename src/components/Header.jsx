@@ -3,11 +3,10 @@ import { useSocialContext } from '../context/sociallyBookedContext'
 import Search from './Search'
 
 export default function Header(props) {
-  const {userInfoObj, handlePageChange, currentPage, isLogginIn, logout = () => {console.log('i was logged out brooo')}} = useSocialContext()
+  const {userInfoObj, handlePageChange, currentPage, logout} = useSocialContext()
 
   const buttonText = currentPage === 'LOGIN' ? 'Sign Me Up' : 'Log Me In'
   const changePage = currentPage === 'LOGIN' ? 'HOME' : 'LOGIN'
-  console.log('what is header prop', props)
   const headerButtonAndTextMap = {
     'HOME': {
       buttonText: 'Log Me In',
@@ -24,9 +23,6 @@ export default function Header(props) {
     }
   }
 
-  // const {handleLocationChange} = useSocialContext()
-
-  
 
   return (
     <div className='header'>
