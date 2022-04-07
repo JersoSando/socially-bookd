@@ -13,7 +13,7 @@ export default function BookCardList({handleDashboardList}) {
   console.log('what is bookItem', bookItem)
   
   return (
-    <div>
+    <div className='book-container'>
       {
         bookList.length > 0 && bookList.map((book, index) => {
           let thumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail;

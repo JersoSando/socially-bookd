@@ -28,7 +28,7 @@ const deletePost = async (id) => {
   }
 
   return (
-    <div>
+    <div className='post-container'>
         <CreatePost createPost={createPost}/>
         {postList.length > 0 && <PostList deletePost={deletePost} postList={postList}/>}
     </div>

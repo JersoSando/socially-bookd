@@ -42,18 +42,24 @@ export default function Signup() {
   return (
     
     <div>
-        <form onSubmit={handleSubmit}>
+        <form className='submit-form' onSubmit={handleSubmit}>
             <label htmlFor="First Name">First Name: </label>
             <input name='First Name' placeholder='First Name' type="text"/>
+            <br/>
             <label htmlFor="Last Name">Last Name: </label>
             <input name='Last Name' placeholder='Last Name' type="text"/>
+            <br/>
             <label htmlFor="Email">Email: </label>
             <input name='Email' placeholder='Email' type="text"/>
+            <br/>
             <label htmlFor="Password">Password: </label>
             <input name='Password' placeholder='Password' type="password"/>
-            <label htmlFor="Reenter Password">Password: </label>
-            <input name='Reenter Password' placeholder='Password' type="password"/>
-            <button>Sign Me Up</button>
+            <br/>
+            <label htmlFor="Reenter Password">Re-enter Password: </label>
+            <input name='Reenter Password' 
+            placeholder='Password' type="password"/>
+            <br/>
+            <button className='signup-btn'>Sign Me Up</button>
         </form>
     </div>
   )

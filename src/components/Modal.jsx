@@ -17,9 +17,9 @@ export default function Modal({show, book, closeModal}) {
             <div className='inner-box'>
                 <img src={thumbnail} alt='' />
                 <div className='info'>
-                    <h1>{book.volumeInfo.title}</h1>
-                    <h3>{book.volumeInfo.authors}</h3>
-                    <h4>{book.volumeInfo.publisher}</h4><span>{book.volumeInfo.publishedDate}</span>
+                    <h2>Title: {book.volumeInfo.title}</h2>
+                    <h3>Author: {book.volumeInfo.authors}</h3>
+                    <h4>Publisher: {book.volumeInfo.publisher}</h4><span>Publishing Year: {book.volumeInfo.publishedDate}</span>
                 </div>
             </div>
                 <h4 className='description'>{book.volumeInfo.description}</h4>

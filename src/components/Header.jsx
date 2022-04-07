@@ -10,26 +10,28 @@ export default function Header(props) {
   console.log('what is header prop', props)
   const headerButtonAndTextMap = {
     'HOME': {
-      buttonText: 'log me in',
+      buttonText: 'Log Me In',
       buttonFunc: () => handlePageChange('LOGIN')
 
     },
     'LOGIN': {
-      buttonText: 'sign me up',
+      buttonText: 'Sign Me Up',
       buttonFunc: () => handlePageChange('HOME')
     },
     'DASHBOARD': {
-      buttonText: 'log me out',
+      buttonText: 'Log Me Out',
       buttonFunc: logout
     }
   }
 
   return (
     <div className='header'>
-        <header>Socially Book'd Hello, {userInfoObj.first_name}</header>
+        <header className='header-name'>Socially Book'd Hello, {userInfoObj.first_name}</header>
         <span className='search-box'>
           <Search handleDashboardList={props.handleDashboardList}/>
+        <span>
           <button onClick={() => headerButtonAndTextMap[currentPage].buttonFunc()}>{headerButtonAndTextMap[currentPage].buttonText}</button>
+        </span>
         </span>
     </div>
   )

@@ -1,38 +1,335 @@
-.App {
-  text-align: center;
+.container{
+  background-color: #ffffff;
+  height: 100vh;
+  padding: 1rem;
+  font-size: large;
+  font-weight: bold;
+  font-family: 'Roboto Mono', monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+/* home page */
+.home-container{
+  display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.main-container{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  padding: 10%;
+  /* background-color: blue; */
+}
+.header{
+  background-color:#5c9ead ;
+  height: 15vh;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 10px 10px #326273;
+}
+
+.header-name{
+  padding-top: 3.5%;
+  padding-left: 2%;
+  font-size: 36px;
+}
+
+.search-box{
+  padding-top:3.5%;
+  padding-right:2%;
+}
+
+.search-input{
+  outline: 0;
+  border: 0;
+  /* width: 400px; */
+  height: 35px;
+  font-size: large;
+}
+
+.column-left {
+  padding-right: 10%;
+}
+
+.column-right {
+  padding-left: auto;
+  /* background-color: white; */
+}
+
+.submit-form{
+  /* padding-top: 10%; */
+  padding: 10% 20%;
+  margin: 8px 0;
+  border: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #5c9ead;
+  box-shadow: 0 10px 10px #326273;
+}
+
+.signup-btn{
+  height: 12;
+}
+
+.signup-btn:hover{
+  background-color: #326273;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* login page */
+.login-container{
+  height: 50vh;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right:10%;
+  padding-right: 10%;
+  display:flex;
+  justify-content: center;
+  height: 60vh;
+  /* border-style: double; */
+  /* border-top: solid;
+  border-width: 0.1px; */
+  /* background-color: #eeeeee; */
+  box-shadow: 0 5px 5px #326273;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-box{
+  /* background-color: #eeeeee; */
+  /* margin: auto; */
+  margin-left: 10%;
+  margin-top: 12%;
+  height: 50%;
+  width: 15%;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  position:absolute;
+}
+
+.login-container img{
+  position:absolute;
+  margin-left: 10%;
+
+  /* top: 0; */
+  margin-bottom:100%;
+  height: auto;
+  width: 70%;
+  /* object-fit: cover; */
+  /* background-image: none; */
+}
+
+.login-btn:hover{
+  background-color: #326273;
+  color: white;
+}
+
+/* post container */
+.post-container{
+  /* background-color: pink; */
+  height: 65vh;
+  margin-top: 2%;
+}
+
+.create-post-container{
+  /* background-color: blue; */
+  display: flex;
+  justify-content: center;
+  height: 5%;
+  /* border: 10px solid #326273; */
+}
+
+.post-list-container{
+  /* background-color: #eeeeee; */
+  margin-top: 5%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;  
+  /* padding-left: 45%; */
+  justify-content: space-evenly;
+  /* border: 10px solid white; */
+}
+
+.post-btn{
+  padding-left: 10px;
+}
+
+/* book container */
+.book-container{
+  height: 65vh;
+  /* background-color: #ffc0cb; */
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+  grid-gap: 20px;
+  box-sizing: border-box;
+}
+
+.card{
+  background-color: #326273;
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 5px black;
+  transition: .5s;
+  text-align: center;
+  position: relative;
+  /* height: 100px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover{
+  transform: scale(0.9);
+  background-color: #5c9ead;
+  /* color:black; */
+  cursor: pointer;
+}
+
+.card img{
+  width: 100%;
+  height: 200px;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card .bottom{
+  display: flex;
+  flex-direction: column;
+  /* height: 60px; */
+  /* font-size: 14px; */
+}
+
+.card .title{
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card .author{
+  /* position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px; */
+  /* background-color: aliceblue; */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0.2rem;
+}
+
+.card .bottom{
+  display: flex;
+  justify-content: baseline;
+  /* font-size: 14px; */
+}
+
+.review {
+  font-size: 16px;
+}
+/* modals */
+.overlay{
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1));
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-inner{
+  background: white;
+  width: 700px;
+  height: 550px;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 1.3rem;
+}
+
+.overlay-inner .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  outline: none;
+  border: none;
+  font-size:17px;
+  background-color: transparent;
+}
+
+.overlay-inner .close:hover{
+  cursor: pointer;
+}
+
+.overlay-inner .inner-box{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.overlay-inner .inner-box img{
+  margin-right: 20px;
+  width: 150px;
+  height: 200px;
+}
+
+.overlay-inner .inner-box h3{
+  margin-top: 5px;
+  color: black;
+}
+
+.overlay-inner .inner-box h4{
+  color: black;
+}
+
+.overlay-inner .inner-box button{
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 5px;
+  background-color: aqua;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem
+}
+
+.overlay-inner .description{
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 13px;
+}
+
+/* review modal */
+.review-description{
+  margin-top: 2rem;
+  text-align: justify;
+  /* display: flex;
+  justify-content: center; */
+  margin-left: 15%;
+}
+
+.submit-review-btn{
+  margin-left: 40%;
+  font-size: 16px;
+}
+
+.review-box{
+  /* background-color: blue; */
+  border-style: double;
+  margin-bottom: 10px;
+}
+
+.review-box:first-child{
+  margin-top: 50px;
+}
+.review-box h3{
+  padding-left: 10px;
+}
+
+.review-box h4{
+  padding-left: 10px ;
 }

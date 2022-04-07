@@ -10,8 +10,7 @@ export default function CreatePost(props) {
     }
 
   return (
-    <div>
-        
+    <div className='create-post-container'>
         <input placeholder='What are you reading?' value={text} onChange={handleText}/>
         <button onClick={() => props.createPost(text)}>Send Post </button>
     </div>

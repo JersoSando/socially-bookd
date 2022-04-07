@@ -21,13 +21,19 @@ export default function Login() {
   return (
     <div>
         <Header />
-        <form onSubmit={loginUser}>
+        <div className='login-container'>
+        <img src='https://t3.ftcdn.net/jpg/00/74/02/62/360_F_74026262_aaY5OVSnJ6LFI5kqqulNBJGWxnYSnhDD.jpg' alt='line of books'/>
+        <form className='login-box' onSubmit={loginUser}>
             <label htmlFor='Email'>Email: </label>
             <input name='Email' placeholder='Email' type='text'/>
+            <br/>
             <label htmlFor='Password'>Password: </label>
             <input name='Password' placeholder='Password' type='password'/>
-            <button>Log Me In</button>
+            <br/>
+            <button className='login-btn'>Log Me In</button>
         </form>
+        
+        </div>
     </div>
   )
 }

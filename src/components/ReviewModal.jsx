@@ -32,10 +32,12 @@ const submitReview = async () => {
                     <h3>{book.volumeInfo.authors}</h3>
                 </div>
             </div>
-        </div>
-            <textarea className='description' rows='4' cols='50' value={reviewText}
+            <textarea className='review-description' rows='5' cols='50' value={reviewText}
             onChange={e => setReviewText(e.target.value)}></textarea>
+            <div className='submit-review-btn'>
             <button onClick={() => submitReview()}>Submit Review</button>
+            </div>
+        </div>
     </div>
   )
 }

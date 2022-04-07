@@ -12,18 +12,19 @@ export default function ReviewContainer() {
     console.log('what is reviewList', reviewList)
 
   return (
-    <div>
+    <div className=''>
         {
             reviewList.length > 0 && reviewList.map((review, index) => {
-                return <div key={index}>
+                return (
+                <div className='review-box'  key={index}>
                     <h3>{review.review_title}</h3>
                     <h3>{review.review_author}</h3>
                     <h4>{review.review_text}</h4>
                 </div>
+                )
             })
             
         }
-        hello world
     </div>
   )
 }

@@ -6,7 +6,7 @@ export default function PostList(props) {
   return (
     //   holds the posts
     // axios.get 
-    <div>
+    <div className='post-list-container'>
       {props.postList && props.postList.map((e) => <Post deletePost={props.deletePost} key={e.post_id} post={e}/>)}
     </div>
   )
